@@ -35,7 +35,7 @@ const Products = ({ list, setList, data, cartItems, setCartItems }) => {
                 <h3 className='product-name'> {title} </h3>
               </div>
               <div className='product-price'>
-                <h2> ${price} </h2>
+                <h2> #{price} </h2>
               </div>
               <div>
                 <button

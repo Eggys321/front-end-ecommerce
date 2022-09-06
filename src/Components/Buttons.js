@@ -13,7 +13,10 @@ const Buttons = ({list,setList,data}) => {
   return (
     <div>
       <div className='button'>
-        <button onClick={() => handleSort("men's clothing")}>Men</button>
+        <button onClick={() => handleSort("men's clothing")}>Men  </button>
+        <div>
+          
+        </div>
         <button onClick={() => handleSort("women's clothing")}>Women</button>
         <button onClick={() => handleSort('jewelery')}>Jewelry</button>
         <button onClick={() => handleSort('electronics')}>Electronics</button>

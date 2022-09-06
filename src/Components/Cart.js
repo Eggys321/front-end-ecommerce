@@ -2,8 +2,41 @@ import React from 'react';
 import '../Styles/Cart.css'
 
 const Cart = ({ cartItems, setCartItems }) => {
-   function handleIncrease() {}
-   function handleDecrease() {}
+  const totalPrice = cartItems.reduce((price,item)=>price + item.quantity * item.price,0)
+   function handleIncrease(product) {
+      const productSelected = cartItems.find(
+        (singleCart) => singleCart.id === product.id
+      )
+      if (productSelected) {
+        setCartItems(
+          cartItems.map((oneItem) =>
+            oneItem.id === product.id
+              ? { ...productSelected, quantity: productSelected.quantity + 1 }
+              : oneItem
+          )
+        )
+      } else {
+        setCartItems([...cartItems, { ...product, quantity: 1 }])
+      }
+     
+   }
+   function handleDecrease(product) {
+     const productSelected = cartItems.find(
+       (singleCart) => singleCart.id === product.id
+     )
+     if (productSelected.quantity === 1) {
+       setCartItems(cartItems.filter((oneItem) => oneItem.id !== product.id))
+     } else {
+       setCartItems(
+         cartItems.map((sItem) =>
+           sItem.id === product.id
+             ? { ...productSelected, quantity: productSelected.quantity - 1 }
+             : sItem
+         )
+       )
+     }
+   }
+
 
   return (
     <div className='cart-items'>
@@ -27,23 +60,21 @@ const Cart = ({ cartItems, setCartItems }) => {
               <div className='cart-items-function'>
                 <button
                   className='cart-items-add'
-                  onClick={() => handleIncrease}
+                  onClick={() => handleIncrease(item)}
                 >
-                  Increase
+                  +
                 </button>
                 <button
                   className='cart-items-remove'
-                  onClick={() => handleDecrease}
+                  onClick={() => handleDecrease(item)}
                 >
                   Decrease
                 </button>
               </div>
               <div className='cart-items-price'>
                 <h4>
-                  {' '}
                   {quantity} * {price}
                 </h4>
-                <button>remove</button>
               </div>
             </div>
           )
@@ -66,6 +97,13 @@ const Cart = ({ cartItems, setCartItems }) => {
           </button>
         </div>
       )}
+      <div className='cart-items-total-price-name'>
+        Total Price
+        <div className="cart-items-total-price">
+          #{totalPrice}
+
+        </div>
+      </div>
     </div>
   )
 }

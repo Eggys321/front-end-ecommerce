@@ -62,13 +62,13 @@ const Cart = ({ cartItems, setCartItems }) => {
                   className='cart-items-add'
                   onClick={() => handleIncrease(item)}
                 >
-                  +
+                  inc
                 </button>
                 <button
                   className='cart-items-remove'
                   onClick={() => handleDecrease(item)}
                 >
-                  Decrease
+                  Dec
                 </button>
               </div>
               <div className='cart-items-price'>

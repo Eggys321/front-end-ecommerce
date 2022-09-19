@@ -32,7 +32,7 @@ const Products = ({ list, setList, data, cartItems, setCartItems }) => {
             <div className='card' key={id}>
               <img className='product-image' src={image} alt='' />
               <div>
-                <h3 className='product-name'> {title} </h3>
+                <h3 className='product-name'> {title.slice(0,12)} </h3>
               </div>
               <div className='product-price'>
                 <h2> #{price} </h2>

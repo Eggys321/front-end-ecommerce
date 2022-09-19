@@ -11,3 +11,73 @@
     background-color: rgb(188, 183, 183);
     color: rgb(17, 15, 15);
 }
+
+@media (max-width: 575px) {
+    .button {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            /* background-color: grey; */
+        }
+    
+        .button button {
+            width: 80%;
+            height: 4vh;
+            font-size: 1.5rem;
+            margin: auto;
+            background-color: rgb(188, 183, 183);
+            color: rgb(17, 15, 15);
+        }
+   
+
+
+}
+
+@media (min-width: 576px) {
+    .button {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            /* background-color: grey; */
+        }
+    
+        .button button {
+            width: 80%;
+            height: 4vh;
+            font-size: 1.5rem;
+            margin: auto;
+            background-color: rgb(188, 183, 183);
+            color: rgb(17, 15, 15);
+        }
+}
+
+
+@media (min-width: 768px) {
+    .button {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+            width: 80%;
+            margin: auto;
+            /* background-color: grey; */
+        }
+    
+        .button button {
+            width: 10.7rem;
+            height: 5vh;
+            background-color: rgb(188, 183, 183);
+            color: rgb(17, 15, 15);
+        }
+}
+
+
+@media (min-width: 992px) {}
+
+
+@media (min-width: 1200px) {}
+
+
+@media (min-width: 1400px) {}
